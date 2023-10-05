@@ -7,7 +7,6 @@ def magic_calculation(a, b):
             c = add(c, num)
         return c
     else:
-        num_2 = sub(a, b)
-        return num_2
+        return sub(a, b)
     return 0
 
