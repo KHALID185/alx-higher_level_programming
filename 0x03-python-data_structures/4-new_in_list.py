@@ -2,10 +2,10 @@
 def new_in_list(my_list, idx, element):
     cpy = [None] * len(my_list)
     dx = 0
-    l = len(my_list) - 1
-    if idx < 0 or idx > l:
+    lgt = len(my_list) - 1
+    if idx < 0 or idx > lgt:
         return my_list
-    while dx <= l:
+    while dx <= lgt:
         if dx == idx:
             cpy[dx] = element
         else:
