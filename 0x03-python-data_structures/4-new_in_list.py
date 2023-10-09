@@ -11,4 +11,4 @@ def new_in_list(my_list, idx, element):
         else:
             cpy[dx] = my_list[dx]
             dx += 1
-            return cpy
+    return cpy
