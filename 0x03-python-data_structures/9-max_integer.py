@@ -5,4 +5,4 @@ def max_integer(my_list=[]):
     else:
         lst = my_list.copy()
         lst.sort()
-        return (len(lst) - 1)
+        return (lst[len(lst) - 1])
