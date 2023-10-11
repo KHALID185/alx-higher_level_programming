@@ -8,8 +8,8 @@
 
 void print_python_bytes(PyObject *p)
 {
-	unsigned char j, sz;
-	PyBytesObject *b = (PyBytesObject *)p;
+	unsigned char j, sizez;
+	PyBytesObject *bytes = (PyBytesObject *)p;
 
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
@@ -18,17 +18,17 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
-	printf("  trying string: %s\n", b->ob_sval);
+	printf("  trying string: %s\n", bytes->ob_sval);
 	if (((PyVarObject *)p)->ob_size > 10)
-		sz = 10;
+		size = 10;
 	else
-		sz = ((PyVarObject *)p)->ob_size + 1;
+		size = ((PyVarObject *)p)->ob_size + 1;
 
-	printf("  first %d bytes: ", sz);
-	for (j = 0; j < sz; j++)
+	printf("  first %d bytes: ", size);
+	for (j = 0; j < size; j++)
 	{
-		printf("%02hhx", b->ob_sval[j]);
-		if (j == (sz - 1))
+		printf("%02hhx", bytes->ob_sval[j]);
+		if (j == (size - 1))
 			printf("\n");
 		else
 			printf(" ");
