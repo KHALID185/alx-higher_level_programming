@@ -45,7 +45,7 @@ void print_python_list(PyObject *p)
 	int sz, al, j;
 	PyListObject *l = (PyListObject *)p;
 	PyVarObject *v = (PyVarObject *)p;
-	const char *type;
+	const char *genre;
 
 	sz = v->ob_size;
 	al = l->allocated;
@@ -54,9 +54,9 @@ void print_python_list(PyObject *p)
 	printf("[*] Allocated = %d\n", al);
 	for (j = 0; j < sz; j++)
 	{
-		type = l->ob_item[j]->ob_type->tp_name;
-		printf("Element %d: %s\n", j, type);
-		if (strcmp(type, "bytes") == 0)
+		genre = l->ob_item[j]->ob_type->tp_name;
+		printf("Element %d: %s\n", j, genre);
+		if (strcmp(genre, "bytes") == 0)
 			print_python_bytes(l->ob_item[j]);
 	}
 }
