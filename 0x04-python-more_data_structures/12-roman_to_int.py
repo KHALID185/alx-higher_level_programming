@@ -7,8 +7,5 @@ def roman_to_int(roman_string):
     c = 0
     for items in reversed(roman_string):
         n_r = d[items]
-        if c < n_r * 5:
-            c += n_r
-        else:
-            c = -n_r
+        c += n_r if c < n_r * 5 else -n_r
     return c
