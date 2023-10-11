@@ -6,4 +6,4 @@ def best_score(a_dictionary):
     for val in a_dictionary.values():
         if val > vm:
             vm = val
-    return [list(a_dictionary.values()).index(vm)])
+    return (list(a_dictionary.keys())[list(a_dictionary.values()).index(vm)])
