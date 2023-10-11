@@ -6,4 +6,6 @@ def best_score(a_dictionary):
     for val in a_dictionary.values():
         if val > vm:
             vm = val
+        else:
+            vm = vm
     return vm
