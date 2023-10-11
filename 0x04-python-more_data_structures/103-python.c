@@ -8,7 +8,7 @@
 
 void print_python_bytes(PyObject *p)
 {
-	unsigned char j, sizez;
+	unsigned char j, size;
 	PyBytesObject *bytes = (PyBytesObject *)p;
 
 	printf("[.] bytes object info\n");
