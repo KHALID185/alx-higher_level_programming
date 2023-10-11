@@ -8,7 +8,7 @@
 
 void print_python_bytes(PyObject *p)
 {
-	unsigned char j, size;
+	unsigned char j, sz;
 	PyBytesObject *bytes = (PyBytesObject *)p;
 
 	printf("[.] bytes object info\n");
@@ -20,15 +20,15 @@ void print_python_bytes(PyObject *p)
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
 	printf("  trying string: %s\n", bytes->ob_sval);
 	if (((PyVarObject *)p)->ob_size > 10)
-		size = 10;
+		sz = 10;
 	else
-		size = ((PyVarObject *)p)->ob_size + 1;
+		sz = ((PyVarObject *)p)->ob_size + 1;
 
-	printf("  first %d bytes: ", size);
-	for (j = 0; j < size; j++)
+	printf("  first %d bytes: ", sz);
+	for (j = 0; j < sz; j++)
 	{
 		printf("%02hhx", bytes->ob_sval[j]);
-		if (j == (size - 1))
+		if (j == (sz - 1))
 			printf("\n");
 		else
 			printf(" ");
