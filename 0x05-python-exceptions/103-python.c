@@ -6,6 +6,7 @@
 #include <bytesobject.h>
 #include <floatobject.h>
 #include <string.h>
+
 /**
  * byt_p - bytes prints
  * @ptr: pointer
@@ -14,7 +15,7 @@
 void byt_p(PyObject *ptr)
 {
 	char *strg;
-    size_t byt, itr;
+	size_t byt, itr;
 
 	setbuf(stdout, NULL);
 	printf("[.] bytes object info\n");
@@ -38,9 +39,8 @@ void byt_p(PyObject *ptr)
  */
 void flt_p(PyObject *ptr)
 {
-    double fltt;
+	double fltt;
 	char *s;
-	
 
 	setbuf(stdout, NULL);
 	printf("[.] float object info\n");
@@ -60,11 +60,9 @@ void flt_p(PyObject *ptr)
  */
 void lst_p(PyObject *ptr)
 {
-    PyListObject *lssst;
+	PyListObject *lssst;
 	const char *garage;
 	size_t sz, j_i, itrr;
-
-	
 
 	setbuf(stdout, NULL);
 	printf("[*] Python list info\n");
