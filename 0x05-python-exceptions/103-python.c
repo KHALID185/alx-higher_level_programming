@@ -3,7 +3,6 @@
 
 /**
  * print_python_bytes - Prints bytes information
- *
  * @p: Python Object
  * Return: no return
  */
