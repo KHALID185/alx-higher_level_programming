@@ -1,1 +1,1 @@
-class && object
+python classes and objects
