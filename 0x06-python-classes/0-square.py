@@ -2,7 +2,7 @@
 """task 0"""
 
 
-
 class Square:
     """Empty clsss"""
+
     pass
