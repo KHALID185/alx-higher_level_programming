@@ -1,72 +1,69 @@
 #!/usr/bin/python3
-"""class that defines a node
-of a singly linked list"""
+"""a class for singly linked list"""
 
 
 class Node:
-    """class node of a linked list"""
+    """a singly linked list presentation"""
 
     def __init__(self, data, next_node=None):
-        """initialize the arguments"""
+        """Initialize a node with arguments"""
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
-        """getter for the data in the ll"""
+        """Getter for data"""
         return (self.__data)
 
     @data.setter
     def data(self, value):
-        """setter of data"""
+        """set a value"""
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
-        """getter of the pointer
-            to the next node"""
+        """Getter for the next_node"""
         return (self.__next_node)
 
     @next_node.setter
     def next_node(self, value):
-        """setter of next node"""
+        """Set a new_nd next_node"""
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
 class SinglyLinkedList:
-    """singly linked list class"""
+    """a singly linked list"""
 
     def __init__(self):
-        """initialize arguments"""
+        """Initalization"""
         self.__head = None
 
     def sorted_insert(self, value):
-        """ inserts a new Node into
-            the correct sorted position"""
-        n_n = Node(value)
+        """insert a new_nd value (argument)"""
+        new_nd = Node(value)
         if self.__head is None:
-            n_n.next_node = None
-            self.__head = n_n
+            new_nd.next_node = None
+            self.__head = new_nd
         elif self.__head.data > value:
-            n_n.next_node = self.__head
-            self.__head = n_n
+            new_nd.next_node = self.__head
+            self.__head = new_nd
         else:
             garage = self.__head
             while (garage.next_node is not None and
                     garage.next_node.data < value):
                 garage = garage.next_node
-            n_n.next_node = garage.next_node
-            garage.next_node = n_n
+            new_nd.next_node = garage.next_node
+            garage.next_node = new_nd
 
     def __str__(self):
-        """representation of the output"""
-        val = []
+        """prints the inserting data"""
+        data_insrt = []
         garage = self.__head
         while garage is not None:
-            val.append(str(garage.data))
+            data_insrt.append(str(garage.data))
             garage = garage.next_node
-        return('\n'.join(val))
+        return ('\n'.join(data_insrt))
