@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 class Square:
-    """Empty c"""
+    """Empty clss"""
     pass
