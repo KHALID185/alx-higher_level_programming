@@ -44,27 +44,27 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """ inserts a new Node into the correct sorted position"""
-        n_d = Node(value)
+        n_n = Node(value)
         if self.__head is None:
-            n_d.next_node = None
-            self.__head = n_d
+            n_n.next_node = None
+            self.__head = n_n
         elif self.__head.data > value:
-            n_d.next_node = self.__head
-            self.__head = n_d
+            n_n.next_node = self.__head
+            self.__head = n_n
         else:
             garage = self.__head
             while (garage.next_node is not None and
                     garage.next_node.data < value):
                 garage = garage.next_node
-                n_d.next_node = garage.next_node
-                garage.next_node = n_d
+            n_n.next_node = garage.next_node
+            garage.next_node = n_n
 
     def __str__(self):
         """representation of the output"""
 
-        out_val = []
+        val = []
         garage = self.__head
         while garage is not None:
-            out_val.append(str(garage.data))
+            val.append(str(garage.data))
             garage = garage.next_node
-        return('\n'.join(out_val))
+        return('\n'.join(val))
