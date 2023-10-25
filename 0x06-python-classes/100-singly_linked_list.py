@@ -64,7 +64,6 @@ class SinglyLinkedList:
 
     def __str__(self):
         """representation of the output"""
-
         val = []
         garage = self.__head
         while garage is not None:
