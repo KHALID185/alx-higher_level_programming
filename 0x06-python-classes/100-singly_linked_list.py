@@ -62,9 +62,9 @@ class SinglyLinkedList:
     def __str__(self):
         """representation of the output"""
 
-        DATA = []
+        out_val = []
         garage = self.__head
         while garage is not None:
-            DATA.append(str(garage.data))
+            out_val.append(str(garage.data))
             garage = garage.next_node
-        return("\n".join(DATA))
+        return('\n'.join(out_val))
