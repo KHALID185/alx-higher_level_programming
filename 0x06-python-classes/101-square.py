@@ -63,9 +63,9 @@ class Square:
         """how to represnete the output"""
         if self.__size != 0:
             [print("") for items in range(0, self.__position[1])]
-        for items_1 in range(0, self__size):
+        for items in range(0, self.__size):
             [print(" ", end="") for items_2 in range(0, self.__position[0])]
             [print("#", end="") for items_3 in range(0, self.__size)]
-            if items_1 != self.__size - 1:
+            if items != self.__size - 1:
                 print("")
-                return ("")
+        return ("")
