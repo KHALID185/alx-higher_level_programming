@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""class that defines a node of a singly linked list"""
+"""class that defines a node
+of a singly linked list"""
 
 
 class Node:
@@ -24,7 +25,8 @@ class Node:
 
     @property
     def next_node(self):
-        """getter of the pointer to the next node"""
+        """getter of the pointer
+            to the next node"""
         return (self.__next_node)
 
     @next_node.setter
@@ -43,7 +45,8 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
-        """ inserts a new Node into the correct sorted position"""
+        """ inserts a new Node into
+            the correct sorted position"""
         n_n = Node(value)
         if self.__head is None:
             n_n.next_node = None
