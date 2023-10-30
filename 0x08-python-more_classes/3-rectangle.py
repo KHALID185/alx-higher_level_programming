@@ -46,6 +46,7 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             return (self.__height * 2) + (self.__width * 2)
         return 0
+
     def __str__(self):
         """return printable rectangle with #"""
         s = ""
