@@ -51,6 +51,6 @@ class Rectangle:
         """return printable rectangle with #"""
         s = ""
         if self.__width != 0 and self.__height != 0:
-            s += "\n".join("#" * self.__width
-                    for line in range(0, self.__height))
+            s += "\n".join(
+                "#" * self.__width for line in range(0, self.__height))
         return s
