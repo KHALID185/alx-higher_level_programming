@@ -56,4 +56,4 @@ class Rectangle:
         return s
     def __repr__(self):
         """Developer-Friendly Representation"""
-        return "Rectangle ({:d}, {:d})".format(self.__width, slef.__height)
+        return "Rectangle ({:d}, {:d})".format(self.__width, self.__height)
