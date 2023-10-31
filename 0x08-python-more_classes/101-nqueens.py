@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """N Queens Module.
 
-Contains the N Queens problem solver.
+Contains the NQueens problem solver.
 """
 import sys
 
