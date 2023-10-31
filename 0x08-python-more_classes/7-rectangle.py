@@ -8,7 +8,7 @@ class Rectangle:
     number_of_instances = 0
     """number of active inst"""
 
-    print_symbol = '#'
+    print_symbol = "#"
     """can be any type"""
 
     def __init__(self, width=0, height=0):
@@ -47,17 +47,17 @@ class Rectangle:
 
     def area(self):
         """return the area of the rectangle"""
-        return self.__height * self.__width
+        return self.height * self.width
 
     def perimeter(self):
         """the perimeter of the rectanggle"""
         if self.__width != 0 and self.__height != 0:
-            return (self.__height * 2) + (self.__width * 2)
+            return (self.height * 2) + (self.width * 2)
         return 0
 
     def __str__(self):
         """return printable rectangle with #"""
-        if self.__width != 0 and self.__height != 0:
+        if self.__width == 0 and self.__height == 0:
             return ""
         return (
                 (str(self.print_symbol) * self.width + "\n") * self.height)[:-1]
