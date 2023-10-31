@@ -6,8 +6,10 @@ class Rectangle:
     """rectangle class not empty"""
 
     number_of_instances = 0
+    """number of active inst"""
 
-    print_symbol = "#"
+    print_symbol = '#'
+    """can be any type"""
 
     def __init__(self, width=0, height=0):
         """initialization"""
