@@ -5,52 +5,52 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
-class tst_mx_int(unittest.TestCase):
+class test_max_int(unittest.TestCase):
     """all test fot unittest integer"""
-    def tst_no_argument(self):
+    def test_no_argument(self):
         """Unittest for non argument"""
         self.assertEqual(max_integer(), None)
 
-    def tst_vide_lst(self):
+    def test_vide_lst(self):
         """Unittest for empty list"""
         self.assertEqual(max_integer([]), None)
 
-    def tst_one_arg(self):
+    def test_one_arg(self):
         """Unittest for one element"""
         self.assertEqual(max_integer([56]), 56)
 
-    def tst_lst_eql(self):
+    def test_lst_eql(self):
         """Unittest for max_integer([..])"""
         self.assertEqual(max_integer([11, 11, 11, 11]), 11)
 
-    def tst_mx_win(self):
+    def test_mx_win(self):
         """Unittest for max win"""
         self.assertEqual(max_integer([10, 4, 6, 2]), 10)
 
-    def tst_lst_win(self):
+    def test_lst_win(self):
         """Unittest for last win"""
         self.assertEqual(max_integer([1, 2, 3, 9]), 9)
 
-    def tst_lst_win_l(self):
+    def test_lst_win_l(self):
         """Unittest for large win"""
-        self.assertEqual(max_integer([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]), 22)
+        self.assertEqual(max_integer([6, 8, 10, 12, 14, 16, 18, 20, 22]), 22)
 
-    def tst_undr(self):
+    def test_undr(self):
         """Unittest for underscore"""
         self.assertEqual(max_integer([1, 3, 4, 2]), 4)
 
-    def tst_undr_l(self):
+    def test_undr_l(self):
         """Unittest for underscore larger"""
         self.assertEqual(max_integer([29, 118, 91, 24, 1030, 199, 98,
                                      108, 756, 512]), 1030)
 
-    def tst_signe(self):
+    def test_signe(self):
         """Unittest for signe numbers"""
         self.assertEqual(
             max_integer([-2, 77, 71, 34, -10, 809, 68, 108, -25, -52]),
             809)
 
-    def tst_signe_large(self):
+    def test_signe_large(self):
         """Unittest for signe numbers larger"""
         self.assertEqual(
             max_integer(
@@ -67,7 +67,7 @@ class tst_mx_int(unittest.TestCase):
                     -9388, 8552, 3582, 3500, 7924, 217, -2976, 6346, -5405,
                     899, -3432, -2550, -3353, 6944, 9623]), 9888)
 
-    def tst_neg(self):
+    def test_neg(self):
         """Unittest for negative numbers"""
         self.assertEqual(
             max_integer(
@@ -92,13 +92,13 @@ class tst_mx_int(unittest.TestCase):
                     -7202853, -6891036, -4379807, -7955196, -1536591,
                     -2839083, -2586661, -9941097, -3136620]), -71888)
 
-    def tst_numbers(self):
+    def test_numbers(self):
         """Unittest for negative and positive numbers"""
         self.assertEqual(
             max_integer(
                 [10, 9.8, -100, -0.1, 100, 9999, -108000, 9998.9]), 9999)
 
-    def tst_numbers_l(self):
+    def test_numbers_l(self):
         """Unittest for signes numbers"""
         self.assertEqual(
             max_integer(
@@ -136,14 +136,14 @@ class tst_mx_int(unittest.TestCase):
                     51481.13114754098, 571618.5, 35977.166666666664,
                     142333.11764705883, 199123.75]), 25035670)
 
-    def tst_float_num(self):
+    def test_float_num(self):
         """Unittest for float numbers"""
         self.assertEqual(
             max_integer(
                 [.00123, .45758, .02345, .23423434, .45675674, .678678,
                     .967090, .7453, .5745375]), 0.96709)
 
-    def tst_float_num_large(self):
+    def test_float_num_large(self):
         """Unittest for float numbers larger"""
         self.assertEqual(
             max_integer(
@@ -191,62 +191,63 @@ class tst_mx_int(unittest.TestCase):
                     0.20607476376994402, 0.9497689034126077,
                     2.1498649449691807]), 29.49635532621737677)
 
-    def tst_numbr_in_str(self):
+    def test_numbr_in_str(self):
         """Unittest for number in string"""
         self.assertEqual(max_integer("128354"), "8")
 
-    def tst_str(self):
+    def test_str(self):
         """Unittest for string only"""
         self.assertEqual(max_integer("Holberton"), "t")
 
-    def tst_lst(self):
+    def test_lst(self):
         """Unittest for list"""
         self.assertEqual(max_integer([[], [2], [5], [2, 9]]), [5])
 
-    def tst_str_in_lst(self):
+    def test_str_in_lst(self):
         """Unittest for string in list"""
         self.assertEqual(
-            max_integer([["foo"], ["abc"], ["sic"], ["ric"]]),
+            max_integer([["foz"], ["bcd"], ["sic"], ["ric"]]),
             ["sic"])
 
-    def tst_infini(self):
+    def test_infini(self):
         """Unittest for infini"""
         self.assertEqual(max_integer([888, float('inf'), float('-inf')]),
                          float('inf'))
 
-    def tst_nan(self):
+    def test_nan(self):
         """Unittest for max_integer([..])"""
         self.assertEqual(max_integer([78, float('nan'), 150]), 150)
 
-    def tst_mixxx(self):
+    def test_mixxx(self):
         """Unittest for max_integer([..])"""
         with self.assertRaises(TypeError):
             max_integer([[], [2], [4], [2, 9], 99, "taouti"])
 
-    def tst_int_str(self):
+    def test_int_str(self):
         """Unittest for max_integer([..])"""
         with self.assertRaises(TypeError):
             max_integer([99, "taouti"])
 
-    def tst_nn_entry(self):
+    def test_nn_entry(self):
         """Unittest for None"""
         with self.assertRaises(TypeError):
             max_integer(None)
 
-    def tst_dictionary(self):
+    def test_dictionary(self):
         """Unittest for max_integer([..])"""
         with self.assertRaises(TypeError):
             max_integer([{20: 23, 14: 45}, {"a": "b"}])
 
-    def tst_integer_error(self):
+    def test_integer_error(self):
         """Unittest for int error"""
         with self.assertRaises(TypeError):
             max_integer(98)
 
-    def tst_flt(self):
+    def test_flt(self):
         """Unittest for float error"""
         with self.assertRaises(TypeError):
             max_integer(9.8)
+
 
 if __name__ == '__main__':
     unittest.main()
