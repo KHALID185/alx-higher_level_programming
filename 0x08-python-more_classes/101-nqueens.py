@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Module containing functions to search for solutions to N-queens problem.
+    Module contaning functions to search for solutions to N-queens problem.
 """
 
 
