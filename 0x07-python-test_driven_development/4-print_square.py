@@ -10,7 +10,7 @@ def print_square(size):
     size - length of the square
 
     raises:
-    TypeError: if size is not integer 
+    TypeError: if size is not integer
             or if it is a float and less than zero
 
     return:
@@ -26,6 +26,7 @@ def print_square(size):
             print("#", end="")
         if line != size - 1:
             print()
+
 
 if __name__ == "__main__":
     import doctest

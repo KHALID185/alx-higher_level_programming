@@ -1,73 +1,73 @@
 #!/usr/bin/python3
-"""Max integer Unittest"""
-
+"""Max integer Unittest
+"""
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
-class tst_mx_int(unittest.TestCase):
+class Tmaxint(unittest.TestCase):
     """all test fot unittest integer"""
-    def tst_no_argument(self):
+    def test_no_argument(self):
         """Unittest for non argument"""
         self.assertEqual(max_integer(), None)
 
-    def tst_vide_lst(self):
+    def test_vide_lst(self):
         """Unittest for empty list"""
         self.assertEqual(max_integer([]), None)
 
-    def tst_one_arg(self):
+    def test_one_arg(self):
         """Unittest for one element"""
-        self.assertEqual(max_integer([56]), 56)
+        self.assertEqual(max_integer([59]), 59)
 
-    def tst_lst_eql(self):
-        """Unittest for max_integer([..])"""
-        self.assertEqual(max_integer([11, 11, 11, 11]), 11)
+    def test_lst_eql(self):
+        """unittest for an list identique"""
+        self.assertEqual(max_integer([3, 3, 3, 3, 3]), 3)
 
-    def tst_mx_win(self):
+    def test_mx_win(self):
         """Unittest for max win"""
-        self.assertEqual(max_integer([10, 4, 6, 2]), 10)
+        self.assertEqual(max_integer([10, 9, 8, 7]), 10)
 
-    def tst_lst_win(self):
-        """Unittest for last win"""
-        self.assertEqual(max_integer([1, 2, 3, 9]), 9)
+    def test_lst_win(self):
+        """Unittest for last elem win"""
+        self.assertEqual(max_integer([7, 8, 9, 10]), 10)
 
-    def tst_lst_win_l(self):
-        """Unittest for large win"""
-        self.assertEqual(max_integer([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]), 22)
+    def test_lst_win_l(self):
+        """Unittest for last win larger"""
+        self.assertEqual(max_integer([6, 8, 10, 12, 14, 16, 18, 20, 22]), 22)
 
-    def tst_undr(self):
-        """Unittest for underscore"""
-        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+    def test_undr(self):
+        """Unittest for element non ordred"""
+        self.assertEqual(max_integer([6, 7, 9, 8]), 9)
 
-    def tst_undr_l(self):
-        """Unittest for underscore larger"""
-        self.assertEqual(max_integer([29, 118, 91, 24, 1030, 199, 98,
-                                     108, 756, 512]), 1030)
+    def test_undr_l(self):
+        """Unittest for unordred number larger"""
+        self.assertEqual(max_integer([91, 24, 1200, 89, 98,
+                                     108, 256, 12, 512]), 1200)
 
-    def tst_signe(self):
-        """Unittest for signe numbers"""
+    def test_signe(self):
+        """Unittest for negative and positive numbers"""
         self.assertEqual(
-            max_integer([-2, 77, 71, 34, -10, 809, 68, 108, -25, -52]),
-            809)
+            max_integer([23, -58, 99, -29, -1024, 89, 98, 180, -356, -500]),
+            180)
 
-    def tst_signe_large(self):
-        """Unittest for signe numbers larger"""
+    def test_signe_large(self):
+        """Unittest for negative and positive numbers larger"""
         self.assertEqual(
             max_integer(
-                [-6355, 973, -849, 4405, 6261, -1907, -9443, -6308,
-                    7474, 50913, 5721, 2319, 74, 7946, -5544, 7693, -7013,
-                    -6683, -8738, 9678, -1081, 4730, -1376, 9126,
-                    -8394, 9732, 1695, -4932, -2100, -6920, 2219, -7319,
+                [-6788, 9735, -8649, 4405, 6261, -1907, 9943, -6308,
+                    7474, -2513, 5721, 2319, 74, 7946, -5544, 7693, -7013,
+                    -6683, 715, -8738, 9678, -1081, 4730, -1376, 9126,
+                    -8394, 9732, 1695, -4932, -2133, -6922, 2219, -7319,
                     -1193, -422, 9312, 9508, -2690, -9206, 4461, 2997, -6753,
-                    -7824, 3097, 1681, 3401, 7221, 1758, -1990, 4958, 4347,
-                    7054, 545, 3492, -7285, -1678, 2230, -4576, -3121,
-                    -6736, -537, 9888, 4281, -8003, 327, 1824, -1973, -9844,
-                    29, 3596, 1108, 6702, 4873, -9452, -5949, -9640, -2156,
-                    -4104, 5772, 5121, -2186, -4870, -4116, 6443, -9381,
-                    -9388, 8552, 3582, 3500, 7924, 217, -2976, 6346, -5405,
-                    899, -3432, -2550, -3353, 6944, 9623]), 9888)
+                    -7824, 3097, 1681, 3401, 7221, 1758, -1990, 4958, -4347,
+                    7054, 545, 3492, -7285, -1672, 2230, -4576, -3121,
+                    -6736, -537, 9823, 4281, 8003, 327, 1824, -1973, -9844,
+                    29, 3596, 1108, 6702, 4873, 9452, -5949, -9640, -2156,
+                    -4104, 5121, -2186, -4870, -4116, 6443, -9381, 8552,
+                    3582, 3500, 7924, 211, -2976, -6346, -5405,
+                    899, -3432, -2550, -3353, 6944, 9623]), 9943)
 
-    def tst_neg(self):
+    def test_neg(self):
         """Unittest for negative numbers"""
         self.assertEqual(
             max_integer(
@@ -76,10 +76,10 @@ class tst_mx_int(unittest.TestCase):
                     -8433749, -7251403, -5117635, -2979207, -1335257,
                     -6867266, -9073637, -6224732, -1080801, -1080228,
                     -6801278, -8351954, -1736432, -746131, -4376995,
-                    -967891, -4663691, -71888, -7153670, -8038202,
+                    -967891, -4663691, -71562, -7153670, -80368202,
                     -7893047, -9350883, -1132134, -3675971, -8495354,
                     -9158229, -9310087, -6319598, -8961209, -4906000,
-                    -386471, -639929, -2676965, -6881679, -6258057,
+                    -386471, -639929, -2676965, -68816790, -6258057,
                     -5490677, -1107298, -4199148, -5933601, -9917695,
                     -7759849, -7045734, -4885806, -9485075, -5119579,
                     -4147063, -7622811, -4671971, -5439539, -840414,
@@ -88,23 +88,22 @@ class tst_mx_int(unittest.TestCase):
                     -6129976, -5791439, -3481890, -7828832, -6954726,
                     -5272933, -4952516, -6115545, -8333464, -7271456,
                     -4097027, -4342575, -8400559, -8235052, -4373818,
-                    -8054214, -8565596, -639225, -2292452, -4269529,
-                    -7202853, -6891036, -4379807, -7955196, -1536591,
-                    -2839083, -2586661, -9941097, -3136620]), -71888)
+                    -7202853, -6891036, -4379809, -7955000, -1536591,
+                    -2839083, -2586, -9941097, -3136620]), -2586)
 
-    def tst_numbers(self):
-        """Unittest for negative and positive numbers"""
+    def test_numbers(self):
+        """Unittest for a melange of - and +"""
         self.assertEqual(
             max_integer(
-                [10, 9.8, -100, -0.1, 100, 9999, -108000, 9998.9]), 9999)
+                [19, 90.8, -677, -9.9, 1400, -100000, 11111]), 11111)
 
-    def tst_numbers_l(self):
-        """Unittest for signes numbers"""
+    def test_numbers_l(self):
+        """Unittest for a melange + and - larger"""
         self.assertEqual(
             max_integer(
                 [199872.7619047619, 115249.8813559322, 37972.944444444445,
                     120549.90322580645, 30889.777777777777, 986136.4,
-                    393382.5416666667, 15441.826086956522, 25035670,
+                    393382.5416666667, 15441.826086956522, 2503567,
                     176118.87179487178, 372359.4, 142747.61538461538,
                     383318.8181818182, 297732.2727272727, 104980.52702702703,
                     98409.27272727272, 617459.875, 56556.62162162162, 61958.8,
@@ -120,10 +119,8 @@ class tst_mx_int(unittest.TestCase):
                     1065047.5, 42946.45614035088, 73670.8813559322,
                     83546.51351351352, 323098.3333333333, 88578.35294117648,
                     89471.0, 47745.197916666664, 17102.676767676767,
-                    127735.80882352941, 110513.05882352941,
                     62214.055555555555, 6968.981481481482, 40691.34693877551,
                     69931.09677419355, 67024.44186046511, 112123.04,
-                    1167186.0, 140392.05, 15814.362637362638,
                     88923.34444444445, 114726.20731707317, 143303.55,
                     38233.83516483517, 94065.72857142857, 42789.892857142855,
                     44182.47169811321, 41313.101265822785, 67705.18965517242,
@@ -133,17 +130,17 @@ class tst_mx_int(unittest.TestCase):
                     99726.62903225806, 4270.788235294118, 490468.4375,
                     54086.642857142855, 73068.5, 108526.5081967213, 52943.875,
                     128534.875, 61069.433333333334, 37142.71951219512,
-                    51481.13114754098, 571618.5, 35977.166666666664,
-                    142333.11764705883, 199123.75]), 25035670)
+                    51481.13114754098, 57771618, 35977.166666666664,
+                    142333.11764705883, 199123.75]), 57771618)
 
-    def tst_float_num(self):
+    def test_float_num(self):
         """Unittest for float numbers"""
         self.assertEqual(
             max_integer(
-                [.00123, .45758, .02345, .23423434, .45675674, .678678,
-                    .967090, .7453, .5745375]), 0.96709)
+                [.00123, .45756, .02345, .23423434, .45675674, .678678,
+                    .967090, .7465, .5745375]), 0.967090)
 
-    def tst_float_num_large(self):
+    def test_float_num_large(self):
         """Unittest for float numbers larger"""
         self.assertEqual(
             max_integer(
@@ -168,85 +165,84 @@ class tst_mx_int(unittest.TestCase):
                     0.014982685631661026, 0.02477737364433171,
                     0.47120480947220955, 2.5056796257122915,
                     1.3349487122618868, 0.08451917751917885,
-                    1.0157082402123356, 29.49635532621737677,
+                    1.0157082402123356, 39.496355326217379,
                     10.171800729369348, 1.1263544935158727,
                     0.47572929035550277, 3.712323073375754,
                     0.5742929278531704, 0.43940976988732966,
-                    0.09537099783126887, 1.4936141049902174,
+                    0.09537099783126887, 1.4936141059902174,
                     5.764320019082692, 4.322880498170903, 2.004237813008687,
-                    0.5565243581024599, 4.302022962278392, 5.680293004785562,
+                    0.5565243581024599, 4.302022962978392, 5.680293004785562,
                     2.178866303290743, 1.0390412554953965,
-                    0.45132551361896317, 1.4643609109467473,
-                    0.6904822043628014, 7.42850599670902, 0.8174242076055683,
-                    0.6560986886071569, 0.6513016647379839, 0.7402037152516,
-                    1.3480227709351067, 10.667222236398727,
-                    1.1255361340134915, 0.3631658619504303,
-                    0.8812949657884553, 1.1100323642668828,
-                    5.0119643460188845, 2.8953551308720056,
-                    2.5574324632368866, 9.169493642307119, 0.4175692708444569,
-                    2.344748944605401, 1.1674261590629318, 0.6998588019912835,
-                    0.42770576125452897, 1.7136005979522013,
-                    8.877571036363525, 0.6825287480571863, 2.6834294650218338,
-                    0.7504024417975861, 0.2762206358275793,
-                    0.20607476376994402, 0.9497689034126077,
-                    2.1498649449691807]), 29.49635532621737677)
+                    0.45132551361896317, 1.4643609199467473,
+                    0.6904822043628014, 7.42850599690902, 0.8174242076055683,
+                    0.6560986886071569, 0.6513016646379839, 0.7402037152516,
+                    1.3480227709351067, 10.667222239398727,
+                    5.0119643460188845, 2.8953551302720056,
+                    2.5574324632368866, 9.169493642407119, 0.4175692708444569,
+                    2.344748944605401, 1.1674261590929318, 0.6998588019912835,
+                    0.42770576125452897, 1.7136005959522013,
+                    8.877571036363525, 0.6825287480771863, 2.6834294650218338,
+                    0.7504024417975861, 0.2762206357275793,
+                    0.20607476376994402, 0.9497689034126977,
+                    2.1498649449691807]), 39.496355326217379)
 
-    def tst_numbr_in_str(self):
-        """Unittest for number in string"""
-        self.assertEqual(max_integer("128354"), "8")
+    def test_numbr_in_str(self):
+        """Unittest for numbers in string"""
+        self.assertEqual(max_integer("1234754"), "7")
 
-    def tst_str(self):
-        """Unittest for string only"""
-        self.assertEqual(max_integer("Holberton"), "t")
+    def test_str(self):
+        """Unittest for a string"""
+        self.assertEqual(max_integer("berton"), "t")
 
-    def tst_lst(self):
+    def test_lst(self):
         """Unittest for list"""
-        self.assertEqual(max_integer([[], [2], [5], [2, 9]]), [5])
+        self.assertEqual(max_integer([[3], [9], [2, 8]]), [9])
 
-    def tst_str_in_lst(self):
-        """Unittest for string in list"""
+    def test_str_in_lst(self):
+        """Unittest for list of strings"""
         self.assertEqual(
-            max_integer([["foo"], ["abc"], ["sic"], ["ric"]]),
+            max_integer([["boo"], ["abc"], ["sic"], ["ric"]]),
             ["sic"])
 
-    def tst_infini(self):
+    def test_infini(self):
         """Unittest for infini"""
-        self.assertEqual(max_integer([888, float('inf'), float('-inf')]),
+        self.assertEqual(max_integer([75, float('inf'), float('-inf')]),
                          float('inf'))
 
-    def tst_nan(self):
-        """Unittest for max_integer([..])"""
-        self.assertEqual(max_integer([78, float('nan'), 150]), 150)
+    def test_nan(self):
+        """Unittest for nan test"""
+        self.assertEqual(max_integer([66, float('nan'), 84]), 84)
 
-    def tst_mixxx(self):
-        """Unittest for max_integer([..])"""
+    def test_mixxx(self):
+        """Unittest for mix in a list"""
         with self.assertRaises(TypeError):
-            max_integer([[], [2], [4], [2, 9], 99, "taouti"])
+            max_integer([[], [20], [2, 8], 78, "taouti"])
 
-    def tst_int_str(self):
-        """Unittest for max_integer([..])"""
+    def test_int_str(self):
+        """Unittest for list in string diff"""
         with self.assertRaises(TypeError):
-            max_integer([99, "taouti"])
+            max_integer([36, "khalid"])
 
-    def tst_nn_entry(self):
+    def test_none_iss(self):
         """Unittest for None"""
         with self.assertRaises(TypeError):
             max_integer(None)
 
-    def tst_dictionary(self):
-        """Unittest for max_integer([..])"""
+    def test_dctory(self):
+        """Unittest for dictorory"""
         with self.assertRaises(TypeError):
-            max_integer([{20: 23, 14: 45}, {"a": "b"}])
+            max_integer([{87: 98, 8: 65}, {"e": "f"}])
 
-    def tst_integer_error(self):
-        """Unittest for int error"""
+    def test_num_integer(self):
+        """Unittest for integer"""
         with self.assertRaises(TypeError):
-            max_integer(98)
+            max_integer(67)
 
-    def tst_flt(self):
-        """Unittest for float error"""
+    def test_num_flt(self):
+        """Unittest for floats"""
         with self.assertRaises(TypeError):
-            max_integer(9.8)
+            max_integer(5.7)
+
 
 if __name__ == '__main__':
     unittest.main()
