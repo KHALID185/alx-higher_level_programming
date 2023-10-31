@@ -15,11 +15,11 @@ def text_indentation(text):
     return:
     void
     """
-    if text is not str:
+    if type(text) is not str:
         raise TypeError("text must be a string")
     for dlm in ".?:":
         text = (dlm + "\n\n").join(
-                [line.strip(" ") for rw in text.split(dlm))])
+                [rw.strip(" ") for rw in text.split(dlm)])
     print(text, end="")
 
 if __name__ == "__main__":

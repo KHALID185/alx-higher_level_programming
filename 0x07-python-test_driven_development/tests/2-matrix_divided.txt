@@ -1,0 +1,93 @@
+Module of "2-matrix_divided"
+============================
+
+Import module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test empty value:
+    >>> matrix_divided([[]], 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix non numbers at one place in matrix:
+    >>> matrix_divided([[2, 1, 8], [1, "me", 3]], 6)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix with none equal line:
+    >>> matrix_divided([[2, 9, 7], [1, 8]], 7)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Test matrix replace it with none:
+    >>> matrix_divided(none, 4)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'none' is not defined
+
+Test empty matrix again:
+    >>> matrix_divided([[], [], []], 8)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix by entry onther type in matrix:
+    >>> matrix_divided("madrid", 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Test empty matrix:
+    >>> matrix_divided([], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix dividing by string:
+    >>> matrix_divided([[8]], "jhgtr")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Test missing MATRIX:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Test matrix with integer and same size:
+    >>> matrix_divided([[8, 4, 6], [5, 7, 3]], 2)
+    [[4.0, 2.0, 3.0], [2.5, 3.5, 1.5]]
+
+Test 1 element:
+    >>> matrix_divided([[9]], 3)
+    [[3.0]]
+
+Test matrix without modify the origin matrix:
+    >>> m = [[3, 4, 5], [6, 7, 8]]
+    >>> matrix_divided(m, 2)
+    [[1.5, 2.0, 2.5], [3.0, 3.5, 4.0]]
+    >>> m[1][1]
+    7
+
+Test matrix dividing by negetive number:
+    >>> matrix_divided([[8, 4, 2], [2, 16, 1]], -4)
+    [[-2.0, -1.0, -0.5], [-0.5, -4.0, -0.25]]
+
+Test matrix dividing by infini:
+    >>> matrix_divided([[87, 9, 6], [98, 45, 9]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test matrix dviding by nan:
+    >>> matrix_divided([[27, 48, 89], [10, 62, 9]], float('nan'))
+    [[nan, nan, nan], [nan, nan, nan]]
+
+Test matrix division by zero:
+    >>> matrix_divided([[20, 47, 34], [17, 9, 10]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero

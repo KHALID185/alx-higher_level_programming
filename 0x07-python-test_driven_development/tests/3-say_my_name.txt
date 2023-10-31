@@ -1,0 +1,53 @@
+Module of ""3-say_my_name"
+============================
+
+Import module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test first name is a list:
+    >>> say_my_name([1, 2, 3], "taouti")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test 2 args is a int not str:
+    >>> say_my_name("khalid", 9)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test all args are not str int:
+    >>> say_my_name(9, (9, 8))
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test function without args:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test entry 2 strings:
+	>>> say_my_name("khalid", "taouti")
+	My name is khalid taouti
+
+Test entry only one argument str:
+	>>> say_my_name("khalid")
+	My name is khalid 
+
+Test 2 argument is a string empty:
+	>>> say_my_name("khalid", "")
+	My name is khalid 
+
+Test 2 args are empty strings:
+	>>> say_my_name("", "")
+	My name is  
+
+Test spaces in 2 args:
+	>>> say_my_name("    ", "    ")
+	My name is          
+
+Test 1 string is empty:
+	>>> say_my_name("", "taouti")
+	My name is  taouti

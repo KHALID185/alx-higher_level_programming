@@ -37,6 +37,6 @@ def matrix_divided(matrix, div):
             raise TypeError("Each row of the matrix must have the same size")
 
     return [[round(items / div, 2) for items in line] for line in matrix]
-if __name__ == "__main__"
+if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/2-matrix_divided.txt")

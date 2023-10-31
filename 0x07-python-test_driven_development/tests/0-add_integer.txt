@@ -1,0 +1,98 @@
+module of "0-add_integer"
+============================
+
+Import module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test 1 integer:
+
+    >>> add_integer(8)
+    106
+
+Test 1 integer null:
+
+    >>> add_integer(0)
+    98
+
+Test 1 float value:
+
+    >>> add_integer(103.8)
+    201
+
+Test 1 float value negative:
+
+    >>> add_integer(-97.5)
+    1
+
+Test 2 positive int:
+
+    >>> add_integer(24, 7)
+    31
+
+Test 2 positive, big integers:
+
+    >>> add_integer(2456987512, 647895222)
+    3104882734
+
+Test 2 integer value with different signe:
+
+    >>> add_integer(57894, -3698574)
+    -3640680
+
+Test 2 type integer and float:
+
+    >>> add_integer(58, 1.88)
+    59
+
+Test 2 float:
+
+    >>> add_integer(4.9, 5.9)
+    9
+
+Add infinity:
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Test 1 number invalid:
+
+    >>> add_integer("kshd", 0)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test 2 number invalid:
+
+    >>> add_integer(56, [])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Test 2 numbers are none:
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test 2 strings:
+
+    >>> add_integer("khalid", "madr")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test overflow float:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Test value error convert to flaot:
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer

@@ -1,0 +1,90 @@
+Module of"5-text_identation"
+=====================================
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+test entry none as argument:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+test entry a argument non string:
+    >>> text_indentation(33)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+test 1: no delimeter
+    >>> text_indentation("khalid taouti")
+    khalid taouti
+
+test 2: with spaces and delimeter other than "?.:"
+    >>> text_indentation("   Taouti, alx student   ")
+    Taouti, alx student
+
+test 3: an empty string ""
+    >>> text_indentation("")
+
+test 4: empty string only spaces
+    >>> text_indentation("   ")
+
+test 5: test with (:) this delimeter
+    >>> text_indentation("Khalid. taouti")
+    Khalid.
+    <BLANKLINE>
+    taouti
+
+test 6: delimeter with spaces only:
+    >>> text_indentation("     .:  ?  ")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+test 7: new line
+    >>> text_indentation("tanalt\n\n")
+    tanalt
+    <BLANKLINE>
+
+test 8: all delimeter in one text
+    >>> text_indentation("name: khalid mail. com? talmst")
+    name:
+    <BLANKLINE>
+    khalid mail.
+    <BLANKLINE>
+    com?
+    <BLANKLINE>
+    talmst
+
+test 9: all delimeter with spaces
+    >>> text_indentation("      khalid   :     ttt    ?    yes.    ofcourse     ")
+    khalid:
+    <BLANKLINE>
+    ttt?
+    <BLANKLINE>
+    yes.
+    <BLANKLINE>
+    ofcourse
+
+test 10: delimeter also
+    >>> text_indentation(":bell?")
+    :
+    <BLANKLINE>
+    bell?
+    <BLANKLINE>
+
+test 11: new line with delim
+    >>> text_indentation(":\n.\n\n?")
+    :
+    <BLANKLINE>
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
