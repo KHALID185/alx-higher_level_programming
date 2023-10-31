@@ -43,7 +43,7 @@ if __name__ == "__main__":
         for items_1 in range(coord_x, nrd):
             l_n_q[items_1][1] = None
 
-    def find_sol_backtrck(coord_x):
+    def nqueens(coord_x):
         """find the solution with backtraking method"""
         for items_y in range(nrd):
             all_reset(coord_x)
@@ -52,6 +52,6 @@ if __name__ == "__main__":
                 if (coord_x == nrd - 1):
                     print(l_n_q)
                 else:
-                    find_sol_backtrck(coord_x + 1)
-
-    find_sol_backtrck(0)
+                    nqueens(coord_x + 1)
+# debut de recursive is 0
+    nqueens(0)
