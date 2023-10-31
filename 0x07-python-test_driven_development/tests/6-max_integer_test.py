@@ -5,7 +5,7 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
-class Tmaxint(unittest.TestCase):
+class TestMaxInteger(unittest.TestCase):
     """all test fot unittest integer"""
     def test_no_argument(self):
         """Unittest for non argument"""
