@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-solves N queen problem 
-"""
+"""solves N queen problem """
 
 
 from sys import argv
