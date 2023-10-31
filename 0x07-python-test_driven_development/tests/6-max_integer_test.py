@@ -239,7 +239,7 @@ class Tmaxint(unittest.TestCase):
             max_integer(67)
 
     def test_num_flt(self):
-        """Unittest for floats"""
+        """Unittest for float numbers"""
         with self.assertRaises(TypeError):
             max_integer(5.7)
 
