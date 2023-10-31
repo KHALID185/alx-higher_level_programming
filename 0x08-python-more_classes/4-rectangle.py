@@ -54,6 +54,7 @@ class Rectangle:
             s += "\n".join(
                 "#" * self.__width for line in range(0, self.__height))
         return s
+
     def __repr__(self):
         """Developer-Friendly Representation"""
-        return "Rectangle ({:d}, {:d})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
