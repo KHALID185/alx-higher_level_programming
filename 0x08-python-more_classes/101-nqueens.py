@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 """
-File: 101-nqueens.py
 Desc: The program in this module solves the N queens problem.
 
 """
