@@ -60,7 +60,9 @@ class Rectangle:
         if self.__width == 0 and self.__height == 0:
             return ""
         return (
-                (str(self.print_symbol) * self.width + "\n") * self.height)[:-1]
+                (str(self.print_symbol) * self.width + "\n")
+                * self.height
+                )[:-1]
 
     def __repr__(self):
         """Developer-Friendly Representation"""
