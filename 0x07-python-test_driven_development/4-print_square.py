@@ -24,8 +24,8 @@ def print_square(size):
     for line in range(size):
         for col in range(size):
             print("#", end="")
-            if line != size - 1:
-                print()
+        if line != size - 1:
+                print("\n")
 
 
 if __name__ == "__main__":
