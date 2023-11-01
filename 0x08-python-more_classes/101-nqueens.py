@@ -34,10 +34,13 @@ def out_brd(brd, line, coln):
     """solutions already see"""
     for cl in range(coln + 1, len(brd)):
         brd[line][cl] = "x"
+
     for cl in range(coln - 1, -1, -1):
         brd[line][cl] = "x"
+
     for ln in range(line + 1, len(brd)):
         brd[ln][coln] = "x"
+
     for ln in range(line - 1, -1, -1):
         brd[ln][coln] = "x"
 
@@ -47,18 +50,21 @@ def out_brd(brd, line, coln):
             break
         brd[ln][cl] = "x"
         cl += 1
+
     cl = coln - 1
     for ln in range(line - 1, -1, -1):
         if cl < 0:
             break
         brd[ln][cl]
         cl -= 1
+
     cl = coln + 1
     for ln in range(line - 1, -1, -1):
         if cl >= len(brd):
             break
         brd[ln][cl] = "x"
         cl += 1
+
     cl = coln - 1
     for ln in range(line + 1, len(brd)):
         if cl < 0:
@@ -90,7 +96,7 @@ def rec_sol(brd, line, qn, sol):
     return (sol)
 
 
-if __name == "__main__":
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
