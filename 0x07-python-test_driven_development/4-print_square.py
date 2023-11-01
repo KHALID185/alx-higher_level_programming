@@ -21,12 +21,7 @@ def print_square(size):
     if size < 0:
         raise ValueError("size must be >= 0")
 
-    for line in range(size):
-        for col in range(size):
-            print("#", end="")
-        if line != size - 1:
-            print()
-    print()
+    print((("#" * size * "\n") * size), end="")
 
 
 if __name__ == "__main__":
