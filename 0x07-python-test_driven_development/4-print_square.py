@@ -26,7 +26,7 @@ def print_square(size):
             print("#", end="")
         if line != size - 1:
             print()
-
+    print()
 
 if __name__ == "__main__":
     import doctest
