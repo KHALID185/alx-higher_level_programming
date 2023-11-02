@@ -1,41 +1,50 @@
 #!/usr/bin/python3
-"""Module for multiple 2 matrix"""
+"""Module for matrix_mul method."""
 
 
 def matrix_mul(m_a, m_b):
     """Multiplies one matrix by another.
-        Args:
-        matrice a and matrice b
-        raises:
-        TypeError and ValueError
-        Return: a * b
+    Args:
+        m_a: the first matrix
+        m_b: the second matrix
+    Returns:
+        matrix: the product
+    Raises:
+        TypeError: If m_a or m_b are not lists.
+        TypeError: If m_a or m_b are not lists of lists.
+        ValueError: If m_a or m_b are empty lists/matrices.
+        TypeError: If m_a or m_b contain a non int/float.
+        TypeError: If m_a or m_b are not rectangular.
+        ValueError: If m_a or m_b can't be multiplied.
     """
 
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
-    a_norect = False
-    b_norect = False
-    a_nonumb = False
-    b_nonumb = False
-    for line in m_a:
-        if not isinstance(line, list):
+    m_a_empty = False
+    m_b_empty = False
+    m_a_notrect = False
+    m_b_notrect = False
+    m_a_notnum = False
+    m_b_notnum = False
+    for row in m_a:
+        if not isinstance(row, list):
             raise TypeError("m_a must be a list of lists")
-        if len(line) != len(m_a[0]):
-            a_norect = True
-        for items in line:
-            if not isinstance(items, (int, float)):
-                a_nonumb = True
+        if len(row) != len(m_a[0]):
+            m_a_notrect = True
+        for num in row:
+            if not isinstance(num, (int, float)):
+                m_a_notnum = True
 
-    for line in m_b:
-        if not type(line) is list:
+    for row in m_b:
+        if not isinstance(row, list):
             raise TypeError("m_b must be a list of lists")
-        if len(line) != len(m_b[0]):
-            b_norect = True
-        for items in line:
-            if not isinstance(items, (int, float)):
-                b_nonumb = True
+        if len(row) != len(m_b[0]):
+            m_b_notrect = True
+        for num in row:
+            if not isinstance(num, (int, float)):
+                m_b_notnum = True
 
     if len(m_a) == 0 or (len(m_a) == 1 and len(m_a[0]) == 0):
         raise ValueError("m_a can't be empty")
@@ -43,32 +52,31 @@ def matrix_mul(m_a, m_b):
     if len(m_b) == 0 or (len(m_b) == 1 and len(m_b[0]) == 0):
         raise ValueError("m_b can't be empty")
 
-    if a_nonumb:
+    if m_a_notnum:
         raise TypeError("m_a should contain only integers or floats")
 
-    if b_nonumb:
+    if m_b_notnum:
         raise TypeError("m_b should contain only integers or floats")
 
-    if a_norect:
+    if m_a_notrect:
         raise TypeError("each row of m_a must should be of the same size")
 
-    if b_norect:
+    if m_b_notrect:
         raise TypeError("each row of m_b must should be of the same size")
 
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    resultat = [[] for i in range(len(m_a))]
+    res = [[] for i in range(len(m_a))]
 
-    for ln in range(len(m_a)):
-        for cl in range(len(m_b[0])):
+    for i in range(len(m_a)):
+        for j in range(len(m_b[0])):
             c = 0
-            for itm in range(len(m_b)):
-                c += m_a[ln][itm] * m_b[itm][cl]
-            resultat[ln].append(c)
+            for k in range(len(m_b)):
+                c += m_a[i][k] * m_b[k][j]
+            res[i].append(c)
 
-    return resultat
-
+    return res
 
 if __name__ == "__main__":
     import doctest
