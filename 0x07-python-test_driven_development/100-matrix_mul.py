@@ -15,8 +15,6 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
-    a_vide = False
-    b_vide = False
     a_norect = False
     b_norect = False
     a_nonumb = False
