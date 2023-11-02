@@ -60,14 +60,15 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    result = [[0 for x in range(len(m_b[0]))] for y in range(len(m_a))]
+    resultat = [[] for i in range(len(m_a))]
+    for ln in range(len(m_a)):
+        for cl in range(len(m_b[0])):
+            c = 0
+            for itm in range(len(m_b)):
+                c += m_a[ln][itm] * m_b[itm][cl]
+            resultat[ln].append(c)
 
-    for i in range(len(m_a)):
-        for j in range(len(m_b[0])):
-            for k in range(len(m_b)):
-                result[i][j] += m_a[i][k] * m_b[k][j]
-
-    return result
+    return (resultat)
 
 
 if __name__ == "__main__":
