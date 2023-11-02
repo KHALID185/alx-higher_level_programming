@@ -70,6 +70,8 @@ def matrix_mul(m_a, m_b):
             resultat[ln].append(c)
 
     return resultat
+    print()
+
 
 if __name__ == "__main__":
     import doctest
