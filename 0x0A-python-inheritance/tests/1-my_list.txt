@@ -1,0 +1,56 @@
+The module of "1-my_list"
+==========================
+Import function from module:
+    >>> MyList = __import__('1-my_list').MyList
+
+test Instance:
+    >>> lst = MyList()
+    >>> isinstance(lst, list)
+    True
+
+test method is an instance method:
+    >>> type(MyList.__dict__['print_sorted'])
+    <class 'function'>
+
+test method called via class with no args:
+    >>> ml.__class__.print_sorted()
+    Traceback (most recent call last):
+    TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+test method called with 1 arg:
+    >>> ml.print_sorted([8, 5, 1])
+    Traceback (most recent call last):
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+test empty list :
+    >>> lst = MyList()
+    >>> lst.print_sorted()
+    []
+
+test list 1:
+    >>> lst = MyList([1, 7, 5])
+    >>> lst.print_sorted()
+    [1, 5, 7]
+
+test list 2:
+    >>> lst = MyList([6, 2, 4, 8])
+    >>> lst.print_sorted()
+    [2, 4, 6, 8]
+
+tset signes lists:
+    >>> lst = MyList([-99, -232565, -1, -2342343, -123])
+    >>> lst.print_sorted()
+    [-2342343, -232565, -123, -99, -1]
+
+test the original list is not change:
+    >>> lst = MyList([2, 8, 1])
+    >>> lst.print_sorted()
+    [1, 2, 8]
+    >>> lst
+    [2, 8, 1]
+
+Test append:
+    >>> lst = MyList()
+    >>> lst.append(9)
+    >>> lst
+    [9]
