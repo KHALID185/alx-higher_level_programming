@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""fct object is an instance of cls inherited from"""
+"""fct object is an instance of class inherited from"""
 
 
 def inherits_from((obj, a_class):
     """
     function return true if object is in the class inherited from
 
-    args: the object and specified class
+    args: the object and lass
 
     return: true or false
     """
