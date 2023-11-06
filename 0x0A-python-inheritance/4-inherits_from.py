@@ -2,7 +2,7 @@
 """fct object is an instance of class inherited from"""
 
 
-def inherits_from((obj, a_class):
+def inherits_from(obj, a_class):
     """
     function return true if object is in the class inherited from
 
