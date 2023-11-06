@@ -1,25 +1,20 @@
 The ``7-base_geometry`` module
 ============================
 
-Using ``BaseGeometry``
----------------------
-
 Import function from module:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Correct Class Type test:
+Class Type test:
     >>> bg = BaseGeometry()
     >>> type(bg) == BaseGeometry
     True
 
 
-area() instance method
-----------------------
 area method is an instance method:
     >>> type(BaseGeometry.__dict__['area'])
     <class 'function'>
 
-area method called via class with no args:
+area method:
     >>> bg.__class__.area()
     Traceback (most recent call last):
     TypeError: area() missing 1 required positional argument: 'self'
@@ -34,9 +29,6 @@ area method normal test:
     Traceback (most recent call last):
     Exception: area() is not implemented
 
-
-integer_validator() instance method
------------------------------------
 integer_validator is an instance method:
     >>> type(BaseGeometry.__dict__['integer_validator'])
     <class 'function'>
