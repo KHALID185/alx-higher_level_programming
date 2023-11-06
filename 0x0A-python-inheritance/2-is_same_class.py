@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""fct verify if object is an instance of class inherited from"""
+"""fct object is an instance of class inherited from"""
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """
     function return true if object is in the class inherited from
 
