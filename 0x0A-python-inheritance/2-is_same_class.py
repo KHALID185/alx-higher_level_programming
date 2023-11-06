@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""function verify if the object is an instance of the 
-    specified class
-"""
+"""fct verify if object is an instance of the specified class"""
 
 
 def is_same_class(obj, a_class):
