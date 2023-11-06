@@ -1,0 +1,92 @@
+module of "7-base_geometry"
+============================
+
+Import function from module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+test type class:
+    >>> clss = BaseGeometry()
+    >>> type(clss) == BaseGeometry
+    True
+
+
+
+test area method 1:
+    >>> type(BaseGeometry.__dict__['area'])
+    <class 'function'>
+
+test area method 2:
+    >>> clss.__class__.area()
+    Traceback (most recent call last):
+    TypeError: area() missing 1 required positional argument: 'self'
+
+test area method 3:
+    >>> clss.area(9)
+    Traceback (most recent call last):
+    TypeError: area() takes 1 positional argument but 2 were given
+
+test area method 4:
+    >>> clss.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+test integer_validator 1:
+    >>> type(BaseGeometry.__dict__['integer_validator'])
+    <class 'function'>
+
+test integer_validator 2:
+    >>> clss.__class__.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+
+test integer_validator 3:
+    >>> clss.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+test integer_validator 4:
+    >>> clss.integer_validator("khalid", "taouti")
+    Traceback (most recent call last):
+    TypeError: khalid must be an integer
+
+integer_validator method list value:
+    >>> clss.integer_validator("a", [1])
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+integer_validator method None value:
+    >>> clss.integer_validator("foo", None)
+    Traceback (most recent call last):
+    TypeError: foo must be an integer
+
+integer_validator method 0 value:
+    >>> clss.integer_validator("key", 0)
+    Traceback (most recent call last):
+    ValueError: key must be greater than 0
+
+integer_validator method negative value:
+    >>> clss.integer_validator("key", -1000)
+    Traceback (most recent call last):
+    ValueError: key must be greater than 0
+
+integer_validator method ok value:
+    >>> clss.integer_validator("key", 98)
+    
+integer_validator method ok value 2:
+    >>> clss.integer_validator("key", 1)
+
+integer_validator method empty string:
+    >>> clss.integer_validator("", 1)
+
+integer_validator method empty string:
+    >>> clss.integer_validator(None, 1)
+
+integer_validator method tuple:
+    >>> clss.integer_validator("Foo", (1, 2))
+    Traceback (most recent call last):
+    TypeError: Foo must be an integer
+
+integer_validator method dic:
+    >>> clss.integer_validator("Foo", {1, 2})
+    Traceback (most recent call last):
+    TypeError: Foo must be an integer
