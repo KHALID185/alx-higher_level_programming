@@ -10,8 +10,7 @@ code_status = {
             '401': 0, '403': 0, '404': 0,
             '405': 0, '500': 0
         }
-size = 0
-j = 0
+size = j = 0
 
 
 def fct_print():
@@ -34,7 +33,7 @@ try:
 
         if j % 10 == 0:
             fct_print()
-        fct_print()
+    fct_print()
 
 except KeyboardInterrupt as exp:
     fct_print()
