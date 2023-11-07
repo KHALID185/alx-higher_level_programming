@@ -8,7 +8,7 @@ def pascal_triangle(n):
         return []
 
     trgl = [[1]]
-    while len(trgl) != n!:
+    while len(trgl) != n:
         ls = trgl[-1]
         garage = [1]
         for items in range(len(ls) -1):
