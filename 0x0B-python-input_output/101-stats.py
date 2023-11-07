@@ -6,9 +6,13 @@ from sys import stdin
 
 
 code_status = {
-        '200' : 0, '301' : 0, '400' : 0, '401' : 0, '403' : 0, '404' : 0, '405' : 0, '500' : 0
+            '200': 0, '301': 0, '400': 0,
+            '401': 0, '403': 0, '404': 0,
+            '405': 0, '500': 0
         }
 size = 0
+j = 0
+
 
 def fct_print():
     """prints statistics since the beginning"""
@@ -17,7 +21,7 @@ def fct_print():
         if val > 0:
             print("{:s}: {:d}".format(ky, val))
 
-j = 0
+
 try:
     for ln in stdin:
         spline = line.split()
