@@ -23,7 +23,7 @@ def fct_print():
 
 try:
     for ln in stdin:
-        spline = line.split()
+        spline = ln.split()
         if len(spline) >= 2:
             stts = spline[-2]
             size += int(spline[-1])
