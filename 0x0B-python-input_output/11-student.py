@@ -15,8 +15,8 @@ class Student:
     def to_json(self, attrs=None):
         """return a dictionnary representention instances"""
         try:
-            for items in attrs:
-                if not isinstance(items, str):
+            for itm in attrs:
+                if not isinstance(itm, str):
                     return self.__dict__
         except Exception:
             return self.__dict__
@@ -30,4 +30,4 @@ class Student:
         """replaces all attributes of the Student instances"""
         for ky, val in json.items():
             if ky in self.__dict__:
-                self.__dict__[key] = val
+                self.__dict__[ky] = val
