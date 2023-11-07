@@ -35,5 +35,5 @@ try:
             fct_print()
     fct_print()
 
-except KeyboardInterrupt as exp:
+except KeyboardInterrupt as e:
     fct_print()
