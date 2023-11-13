@@ -84,3 +84,28 @@ class Rectangle(Base):
                     type(self).__name__, self.id, self.x,
                     self.y, self.width, self.height
                     )
+
+    def __fct_updt(self, id=0, width=0, height=0, x=0, y=0):
+        """iteret attributes"""
+        if id:
+            self.id = id
+        if width:
+            self.width = width
+        if height:
+            self.height = height
+        if x:
+            self.x = x
+        if y:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """update by args and kwargs"""
+        if args:
+            self.__fct_updt(*args)
+        if kwargs:
+            self.__fct_updt(**kwargs)
+
+    def to_dictionary(self):
+        """return dictionary by ordre"""
+        return {"id": self.id, "width": self.__width, "height": self.height,
+                "y": self.__y, "x": self.__x}
