@@ -72,52 +72,65 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """serialization in csv"""
+        """ serialization to csv"""
         from models.rectangle import Rectangle
         from models.square import Square
-        if list_objs is not None:
-            if cls is Rectangle:
-                list_objs = [
-                                [a.id, a.width, a.height, a.x, a.y]
-                                for a in list_objs
-                            ]
-            else:
-                list_objs = [
-                                [a.id, a.size, a.x, a.y]
-                                for a in list_objs
-                            ]
-        with open(
-                    '{}.csv'.format(cls.__name__),
-                    'w', newline='', encoding='utf-8'
-                    ) as fl:
+        f_n = "{}.csv".format(cls.__name__)
+
+        if cls.__name__ == "Rectangle":
+            lst_d = [0, 0, 0, 0, 0]
+            lst_k = ['id', 'width', 'height', 'x', 'y']
+        else:
+            lst_d = ['0', '0', '0', '0']
+            lst_k = ['id', 'size', 'x', 'y']
+
+        res = []
+
+        if not list_objs:
+            pass
+        else:
+            for ob in list_objs:
+                for ln in range(len(lst_k)):
+                    lst_d[ln] = ob.to_dictionary()[lst_k[ln]]
+                res.append(lst_d[:])
+
+        with open(f_n, 'w') as fl:
             writer = csv.writer(fl)
-            writer.writerows(list_objs)
+            writer.writerows(res)
 
     @classmethod
     def load_from_file_csv(cls):
-        """deserialize in csv"""
+        """deserialization of csv file"""
         from models.rectangle import Rectangle
         from models.square import Square
-        lst = []
-        with open(
-                    '{}.csv'.format(cls.__name__),
-                    'r', newline='', encoding='utf-8'
-                    ) as fl:
+        import os.path
+        f_n = "{}.csv".format(cls.__name__)
+
+        if os.path.exists(f_n) is False:
+            return []
+
+        with open(f_n, 'r') as fl:
             reader = csv.reader(fl)
-            for ln in reader:
-                ln = [int(b) for b in ln]
-                if cls is Rectangle:
-                    dct = {
-                            "id": ln[0], "width": ln[1], "height": ln[2],
-                            "x": ln[3], "y": ln[4]
-                        }
-                else:
-                    dct = {
-                            "id": ln[0], "size": ln[1],
-                            "x": ln[2], "y": ln[3]
-                        }
-                    lst.append(cls.create(**dct))
-        return lst
+            l_csv = list(reader)
+
+        if cls.__name__ == "Rectangle":
+            l_k = ['id', 'width', 'height', 'x', 'y']
+        else:
+            l_k = ['id', 'size', 'x', 'y']
+
+        res = []
+
+        for items in l_csv:
+            d_csv = {}
+            for ln in enumerate(items):
+                d_csv[l_k[ln[0]]] = int(ln[1])
+            res.append(d_csv)
+
+        l_i = []
+
+        for items_1 in range(len(res)):
+            l_i.append(cls.create(**res[items_1]))
+        return l_i
 
     @staticmethod
     def draw(list_rectangles, list_squares):
