@@ -18,17 +18,16 @@ const newDict = {};
 // Initialize an empty object
 
 for (const j in valsUniq) {
-	// Iterate through each unique value.
+  // Iterate through each unique value.
+  const list = [];
+  // Initialize an empty list to store keys
+  for (const k in totalist) {
+    if (totalist[k][1] === valsUniq[j]) {
+      list.unshift(totalist[k][0]);
+    }
+  }
 
-	const list = [];
-	// Initialize an empty list to store keys
-
-	for (const k in totalist) {
-		if (totalist[k][1] === valsUniq[j]) {
-			list.unshift(totalist[k][0]);
-		}
-	}
-
-	newDict[valsUniq[j]] = list;
+  newDict[valsUniq[j]] = list;
+}
 
 console.log(newDict);
