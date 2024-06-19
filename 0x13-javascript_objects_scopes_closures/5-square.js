@@ -1,4 +1,3 @@
-
 #!/usr/bin/node
 
 // the path to the interpreter for the script.
