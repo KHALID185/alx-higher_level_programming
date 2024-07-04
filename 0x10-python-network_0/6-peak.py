@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define a function to find a peak in a list of unsorted integers."""
+"""Define a function to find a peak in a list."""
 
 def find_peak(list_of_integers):
     """Find a peak in a list of unsorted integers."""
@@ -8,7 +8,7 @@ def find_peak(list_of_integers):
     return bin_search(list_of_integers, 0, len(list_of_integers) - 1)
 
 def bin_search(arr, low, high):
-    """Binary search algorithm to find a peak."""
+    """Binary search algorithm to find a peak"""
     if low == high:
         return arr[low]
     mid = (low + high) // 2
