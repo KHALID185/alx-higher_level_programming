@@ -1,26 +1,39 @@
 #!/usr/bin/python3
-"""Defines a peak-finding algorithm."""
+""" define Peak value in a list"""
 
 
 def find_peak(list_of_integers):
-    """ Finds the peak in a list of integers """
+    """peak in a list of int"""
     if list_of_integers == []:
+    """Find the peak in a list of integer unsorted"""
+    list_i = len(list_of_integers)
+    if list_i is 0:
         return None
+    peak = bin_search(list_of_integers, 0, list_i - 1)
+    return list_of_integers[peak]
 
-    length = len(list_of_integers)
-    m = int(length / 2)
-    li = list_of_integers
+    sz = len(list_of_integers)
+    if sz == 1:
+        return list_of_integers[0]
+    elif sz == 2:
+        return max(list_of_integers)
 
-    if m - 1 < 0 and m + 1 >= length:
-        return li[m]
-    elif m - 1 < 0:
-        return li[m] if li[m] > li[m + 1] else li[m + 1]
-    elif m + 1 >= length:
-        return li[m] if li[m] > li[m - 1] else li[m - 1]
+    md = int(sz / 2)
+    peak = list_of_integers[md]
+    if peak > list_of_integers[md - 1] and peak > list_of_integers[md + 1]:
+        return peak
+    elif peak < list_of_integers[md - 1]:
+        return find_peak(list_of_integers[:md])
+""" binary search algorithim """
 
-    if li[m - 1] < li[m] > li[m + 1]:
-        return li[m]
 
-    if li[m + 1] > li[m - 1]:
-        return find_peak(li[m:])
-    return find_peak(li[:m])
+def bin_search(aa, l, h):
+    """binary search of the peak"""
+    if l >= h:
+        return l
+    md = ((h - l) // 2) + l
+    if aa[md] > aa[md + 1]:
+        return bin_search(aa, l, md)
+    else:
+        return find_peak(list_of_integers[md + 1:])
+        return bin_search(aa, md + 1, h)
