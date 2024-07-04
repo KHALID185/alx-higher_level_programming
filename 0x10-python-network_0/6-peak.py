@@ -1,22 +1,29 @@
 #!/usr/bin/python3
-"""Define a function to find a peak in a list."""
+""" Finds a peak in a list of unsorted integers"""
 
 
 def find_peak(list_of_integers):
-    """Find a peak in a list of unsorted integers."""
+    """
+    Finds a peak in a list of unsorted integers.
+
+    Args:
+        list_of_integers (list): List of unsorted integers.
+
+    Returns:
+        int or None: The peak element in the list, \
+                or None if the list is empty.
+    """
     if not list_of_integers:
         return None
-    return find_peak_util(list_of_integers, 0, len(list_of_integers) - 1)
 
-def bin_search(arr, low, high):
-    """Binary search algorithm to find a peak"""
-    if low == high:
-        return arr[low]
-    mid = (low + high) // 2
+    low = 0
+    high = len(list_of_integers) - 1
 
-    if (mid == 0 or arr[mid - 1] <= arr[mid]) and (mid == len(arr) - 1 or arr[mid + 1] <= arr[mid]):
-        return arr[mid]
-    elif mid > 0 and arr[mid - 1] > arr[mid]:
-        return bin_search(arr, low, mid - 1)
-    else:
-        return bin_search(arr, mid + 1, high)
+    while low < high:
+        mid = (low + high) // 2
+        if list_of_integers[mid] <= list_of_integers[mid + 1]:
+            low = mid + 1
+        else:
+            high = mid
+
+    return list_of_integers[low]
