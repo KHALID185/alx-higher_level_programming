@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that sends a POST request to the passed URL 
+script that sends a POST request to the passed url
 as a parameter and displays the body of the response
 """
 

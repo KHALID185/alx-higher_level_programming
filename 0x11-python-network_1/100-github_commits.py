@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that list 10 commits from the most recent 
+script that list 10 commits from the most recent
 to the oldest of the repository
 """
 
