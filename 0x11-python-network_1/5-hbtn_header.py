@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script that take a url and send a request 
+script that take a url and send a request
 and displays variable X-Request-ID
 """
 
